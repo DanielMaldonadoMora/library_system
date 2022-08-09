@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
     'drf_yasg',
     'library_sys',
     'books',
@@ -114,7 +115,7 @@ REST_FRAMEWORK = {
     
 }
 SIMPLE_JWT = {
-    'ACCES_TOKEN_LIFETIME': datetime.timedelta(minutes=180),
+    'ACCES_TOKEN_LIFETIME': datetime.timedelta(hours=3),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=7)
 }
 
