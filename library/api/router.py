@@ -1,5 +1,5 @@
 from rest_framework.routers import DefaultRouter
-from library_sys.api.views import LibraryApiViewSet,RackApiViewSet
+from library.api.views import LibraryApiViewSet,RackApiViewSet
 
 router_library = DefaultRouter()
 

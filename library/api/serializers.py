@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from library_sys.models import Library,Rack
+from library.models import Library,Rack
 
 
 

@@ -2,9 +2,9 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 
-from library_sys.models import Library,Rack
-from library_sys.api.serializers import RackSerializer,LibrarySerializer
-from library_sys.api.permissions import IsAdminOrReadOnly
+from library.models import Library,Rack
+from library.api.serializers import RackSerializer,LibrarySerializer
+from library.api.permissions import IsAdminOrReadOnly
 
 
 class LibraryApiViewSet(ModelViewSet):

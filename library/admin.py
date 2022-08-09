@@ -1,5 +1,5 @@
 from django.contrib import admin
-from library_sys.models import Library,Rack
+from library.models import Library,Rack
 
 
 @admin.register(Library)

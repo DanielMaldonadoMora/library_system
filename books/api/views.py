@@ -21,3 +21,10 @@ class BooksApiViewSet(ModelViewSet):
     filter_backends=[DjangoFilterBackend]
     filterset_fields=['title','subject','publisher','language'] 
     
+class BookItemsApiViewSet(ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]
+    serializer_class = BookItemSerializer
+    queryset = BookItem.objects.all() 
+    filter_backends=[DjangoFilterBackend]
+    filterset_fields=['barcode','bookInfo','rack'] 
+    
