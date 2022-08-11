@@ -7,9 +7,9 @@ from books.models import BookItem
 class Borrow(models.Model):
     user=models.ForeignKey(User,on_delete=SET_NULL,null=True)
     book=models.ForeignKey(BookItem,on_delete=SET_NULL,null=True)
-    borrowed=models.DateField(null=True,blank=True)
-    dueDate=models.DateField(null=True,blank=True)
+    borrowed=models.DateField(null=True)
+    dueDate=models.DateField()
     
 
     def __str__(self):
-        return self.title
+        return f'{self.book.title} borrowed will return on {self.dueDate}'

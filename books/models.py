@@ -1,6 +1,6 @@
 from django.db import models
-from django.db.models import SET_NULL
-from library_sys.models import Rack
+from django.db.models import SET_NULL, CASCADE
+from library_sys.models import Rack,Library
 
 # Create your models here.
 class Author(models.Model):
@@ -27,12 +27,11 @@ class BookItem(models.Model):
     barcode=models.CharField(max_length=255)
     isReferenceOnly=models.BooleanField()
     checkout=models.BooleanField()
-    borrowed=models.DateField(null=True,blank=True)
-    dueDate=models.DateField(null=True,blank=True)
-    status=models.CharField(max_length=255)
-    bookInfo=models.ForeignKey(Book,on_delete=SET_NULL,null=True)
+    status=models.BooleanField(default=True)
+    bookInfo=models.ForeignKey(Book,on_delete=CASCADE ,null=True)
     rack=models.ForeignKey(Rack,on_delete=SET_NULL,null=True) 
+    library=models.ForeignKey(Library,on_delete=SET_NULL,null=True) 
 
     def __str__(self):
-        return self.status
+        return self.bookInfo.title
     

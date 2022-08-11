@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from books.models import Book, BookItem, Author
-from library_sys.models import Rack
-from library_sys.api.serializers import RackSerializer
+from library_sys.models import Rack,Library
+from library_sys.api.serializers import RackSerializer, LibrarySerializer
 
 
 
@@ -26,6 +26,8 @@ class BookItemSerializer(serializers.ModelSerializer):
     bookId =serializers.PrimaryKeyRelatedField(write_only=True, queryset=Book.objects.all(), source='bookInfo')
     rack = RackSerializer(read_only=True)
     rackId =serializers.PrimaryKeyRelatedField(write_only=True, queryset=Rack.objects.all(), source='rack')
+    library = LibrarySerializer(read_only=True)
+    libraryId =serializers.PrimaryKeyRelatedField(write_only=True, queryset=Library.objects.all(), source='library')
     class Meta:
         model=BookItem
-        fields=['barcode','bookInfo','rack','bookId','rackId','status']
+        fields=['barcode','bookInfo','bookId','library','libraryId','rack','rackId','status',]
