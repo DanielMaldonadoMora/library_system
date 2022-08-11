@@ -6,4 +6,4 @@ router_books = DefaultRouter()
 
 router_author.register(prefix='author', basename='author', viewset=AuthorApiViewSet)
 router_books.register(prefix='books', basename='books', viewset=BooksApiViewSet)
-router_books.register(prefix='books/bookitem', basename='booksItem', viewset=BookItemsApiViewSet)
+router_books.register(prefix='bookitem', basename='booksItem', viewset=BookItemsApiViewSet)

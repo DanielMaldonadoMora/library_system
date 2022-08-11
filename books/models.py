@@ -27,11 +27,11 @@ class BookItem(models.Model):
     barcode=models.CharField(max_length=255)
     isReferenceOnly=models.BooleanField()
     checkout=models.BooleanField()
-    borrowed=models.DateField(null=True)
-    dueDate=models.DateField(null=True)
+    borrowed=models.DateField(null=True,blank=True)
+    dueDate=models.DateField(null=True,blank=True)
     status=models.CharField(max_length=255)
     bookInfo=models.ForeignKey(Book,on_delete=SET_NULL,null=True)
-    rack=models.ForeignKey(Rack,on_delete=SET_NULL,null=True)
+    rack=models.ForeignKey(Rack,on_delete=SET_NULL,null=True) 
 
     def __str__(self):
         return self.status

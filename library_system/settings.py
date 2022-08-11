@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     'library_sys',
+    'borrow_system',
     'books',
     'users'
 ]
@@ -109,13 +110,12 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
    
     'DEFAULT_AUTHENTICATION_CLASSES': (
-       
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
     
 }
 SIMPLE_JWT = {
-    'ACCES_TOKEN_LIFETIME': datetime.timedelta(hours=3),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(hours=3),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=7)
 }
 
