@@ -19,6 +19,7 @@ from django.urls import path, include
 #-----aps
 from books.api.router import router_author,router_books
 from library_sys.api.router import router_library
+from borrow_system.api.router import router_borrows
 
 #--- DOCS
 from drf_yasg.views import get_schema_view
@@ -49,4 +50,5 @@ urlpatterns = [
     path('api/', include(router_author.urls)),
     path('api/', include(router_books.urls)),
     path('api/', include(router_library.urls)),
+    path('api/', include(router_borrows.urls)),
 ]

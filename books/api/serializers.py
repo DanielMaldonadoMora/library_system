@@ -30,4 +30,4 @@ class BookItemSerializer(serializers.ModelSerializer):
     libraryId =serializers.PrimaryKeyRelatedField(write_only=True, queryset=Library.objects.all(), source='library')
     class Meta:
         model=BookItem
-        fields=['barcode','bookInfo','bookId','library','libraryId','rack','rackId','status',]
+        fields=['id','barcode','bookInfo','bookId','library','libraryId','rack','rackId','status',]

@@ -4,12 +4,13 @@ from users.models import User
 from books.models import BookItem
 
 
+
 class Borrow(models.Model):
     user=models.ForeignKey(User,on_delete=SET_NULL,null=True)
     book=models.ForeignKey(BookItem,on_delete=SET_NULL,null=True)
-    borrowed=models.DateField(null=True)
-    dueDate=models.DateField()
+    borrowed=models.DateField(auto_now_add=True)
+    
     
 
     def __str__(self):
-        return f'{self.book.title} borrowed will return on {self.dueDate}'
+        return f'{self.book.bookInfo.title} borrowed to {self.user}'
